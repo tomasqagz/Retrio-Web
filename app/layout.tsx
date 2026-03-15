@@ -10,6 +10,27 @@ export const metadata: Metadata = {
   title: "Retrio · Home",
   description:
     "Retrio es un launcher de juegos retro para Windows. Buscá juegos con IGDB, descargalos vía torrent integrado y lanzalos con el emulador correcto automáticamente.",
+  openGraph: {
+    title: "Retrio",
+    description: "Tu librería de juegos retro para Windows.",
+    url: "https://retrio-web.vercel.app",
+    siteName: "Retrio",
+    images: [
+      {
+        url: "https://retrio-web.vercel.app/Icons/RetrioIcon.png",
+        width: 512,
+        height: 512,
+        alt: "Retrio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Retrio",
+    description: "Tu librería de juegos retro para Windows.",
+    images: ["https://retrio-web.vercel.app/Icons/RetrioIcon.png"],
+  },
 };
 
 export default function RootLayout({
