@@ -6,7 +6,7 @@ import { translations, Lang } from "../lib/translations";
 type LanguageContextType = {
   lang: Lang;
   setLang: (lang: Lang) => void;
-  t: typeof translations.es;
+  t: (typeof translations)[Lang];
   dark: boolean;
   setDark: (dark: boolean) => void;
 };
