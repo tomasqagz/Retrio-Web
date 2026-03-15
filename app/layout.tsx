@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={inter.className}><LanguageProvider>{children}</LanguageProvider></body>
+      <body className={inter.className}><LanguageProvider>{children}</LanguageProvider><Analytics /></body>
     </html>
   );
 }
