@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     siteName: "Retrio",
     images: [
       {
-        url: "https://retrio-web.vercel.app/Icons/RetrioIcon.png",
-        width: 512,
-        height: 512,
+        url: "https://retrio-web.vercel.app/Icons/RetrioBanner.png",
+        width: 1200,
+        height: 630,
         alt: "Retrio",
       },
     ],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Retrio",
     description: "Tu librería de juegos retro para Windows.",
-    images: ["https://retrio-web.vercel.app/Icons/RetrioIcon.png"],
+    images: ["https://retrio-web.vercel.app/Icons/RetrioBanner.png"],
   },
 };
 
