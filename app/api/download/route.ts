@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
+  console.log(`[download] ${new Date().toISOString()}`);
+
   const res = await fetch("https://api.github.com/repos/tomasqagz/Retrio/releases/latest", {
     headers: { Accept: "application/vnd.github+json" },
     next: { revalidate: 300 }, // cache 5 min
