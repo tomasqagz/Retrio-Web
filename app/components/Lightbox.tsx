@@ -4,12 +4,12 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 const screenshots = [
-  "/Screenshots/search.png",
-  "/Screenshots/Screenshot_1.png",
-  "/Screenshots/Screenshot_2.png",
-  "/Screenshots/home.png",
-  "/Screenshots/library.png",
-  "/Screenshots/settings.png",
+  "/Screenshots/search.webp",
+  "/Screenshots/Screenshot_1.webp",
+  "/Screenshots/Screenshot_2.webp",
+  "/Screenshots/home.webp",
+  "/Screenshots/library.webp",
+  "/Screenshots/settings.webp",
 ];
 
 const COUNT = screenshots.length;
