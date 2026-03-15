@@ -14,7 +14,6 @@ export default function Navbar() {
       height: 64,
     }}>
       <div style={{
-        display: "flex", alignItems: "center", justifyContent: "space-between",
         width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: "40%",
       }}>
 
