@@ -1,10 +1,18 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import Lightbox from "./Lightbox";
 
 export default function Hero() {
   const { t } = useLanguage();
+  const [downloads, setDownloads] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch("/api/downloads")
+      .then((r) => r.json())
+      .then((d) => setDownloads(d.count));
+  }, []);
 
   return (
     <section style={{
@@ -54,6 +62,12 @@ export default function Hero() {
             {t.hero.github}
           </a>
         </div>
+
+        {downloads !== null && (
+          <p style={{ marginTop: 16, fontSize: 13, color: "var(--text-muted)" }}>
+            ↓ {downloads.toLocaleString()} {t.hero.downloads}
+          </p>
+        )}
       </div>
 
       <Lightbox />

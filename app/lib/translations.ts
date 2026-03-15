@@ -12,6 +12,7 @@ export const translations = {
         "Buscá juegos por nombre, descargalos directo con torrent integrado, lanzalos con el emulador correcto — todo desde una sola app.",
       download: "Descargar",
       github: "Ver en GitHub",
+      downloads: "descargas",
     },
     features: {
       items: [
@@ -108,6 +109,7 @@ export const translations = {
         "Search games by name, download them with the built-in torrent client, launch them with the right emulator — all from a single app.",
       download: "Download",
       github: "View on GitHub",
+      downloads: "downloads",
     },
     features: {
       items: [

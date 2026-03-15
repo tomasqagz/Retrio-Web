@@ -1,11 +1,23 @@
 import { NextResponse } from "next/server";
+import { Redis } from "@upstash/redis";
+
+const redis = process.env.UPSTASH_REDIS_REST_URL
+  ? new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL!,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+    })
+  : null;
 
 export async function GET() {
   console.log(`[download] ${new Date().toISOString()}`);
 
+  if (redis) {
+    await redis.incr("downloads");
+  }
+
   const res = await fetch("https://api.github.com/repos/tomasqagz/Retrio/releases/latest", {
     headers: { Accept: "application/vnd.github+json" },
-    next: { revalidate: 300 }, // cache 5 min
+    next: { revalidate: 300 },
   });
 
   if (!res.ok) {
