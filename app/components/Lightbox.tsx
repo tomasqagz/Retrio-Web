@@ -4,17 +4,18 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 const screenshots = [
-  "/Screenshots/search.webp",
-  "/Screenshots/Screenshot_1.webp",
-  "/Screenshots/Screenshot_2.webp",
-  "/Screenshots/home.webp",
-  "/Screenshots/library.webp",
-  "/Screenshots/settings.webp",
+  { src: "/Screenshots/search.webp", alt: "Retrio — búsqueda de juegos retro con IGDB" },
+  { src: "/Screenshots/Screenshot_1.webp", alt: "Retrio — detalle de juego con portada e información" },
+  { src: "/Screenshots/Screenshot_2.webp", alt: "Retrio — descarga de juego con cliente torrent integrado" },
+  { src: "/Screenshots/home.webp", alt: "Retrio — pantalla principal" },
+  { src: "/Screenshots/library.webp", alt: "Retrio — librería de juegos descargados" },
+  { src: "/Screenshots/settings.webp", alt: "Retrio — configuración de emuladores" },
 ];
 
 const COUNT = screenshots.length;
 // Triplicamos para que siempre haya vecinos en ambos lados
 const looped = [...screenshots, ...screenshots, ...screenshots];
+
 
 export default function Lightbox() {
   // Arranca en el set del medio, Screenshot_1 centrada
@@ -77,7 +78,7 @@ export default function Lightbox() {
             transform: `translateX(${-offset}px)`,
             transition: animated ? "transform 0.4s cubic-bezier(0.4,0,0.2,1)" : "none",
           }}>
-            {looped.map((src, i) => {
+            {looped.map((screenshot, i) => {
               const isActive = i === current;
               return (
                 <div
@@ -99,8 +100,8 @@ export default function Lightbox() {
                   }}
                 >
                   <Image
-                    src={src}
-                    alt={`Screenshot ${i + 1}`}
+                    src={screenshot.src}
+                    alt={screenshot.alt}
                     fill
                     style={{ objectFit: "contain", pointerEvents: "none" }}
                     priority={i === 0}
@@ -144,7 +145,7 @@ export default function Lightbox() {
             style={{ position: "relative", width: "88vw", maxWidth: 1500, aspectRatio: "16/10" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <Image src={screenshots[current % COUNT]} alt="Screenshot" fill style={{ objectFit: "contain", borderRadius: 10 }} />
+            <Image src={screenshots[current % COUNT].src} alt={screenshots[current % COUNT].alt} fill style={{ objectFit: "contain", borderRadius: 10 }} />
 
             <button onClick={(e) => { e.stopPropagation(); prev(); }} style={{
               position: "absolute", left: -56, top: "50%", transform: "translateY(-50%)",

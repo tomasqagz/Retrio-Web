@@ -70,6 +70,11 @@ const jsonLd = {
     priceCurrency: "USD",
   },
   image: "https://retrio-web.vercel.app/Icons/RetrioBanner.png",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    ratingCount: "1",
+  },
 };
 
 export default function RootLayout({
