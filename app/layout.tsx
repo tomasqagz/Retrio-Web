@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     images: ["https://retrio-web.vercel.app/Icons/RetrioBanner.png"],
   },
   verification: {
-    google: "e0zJUE1Hbz98D9EfryrftVwn3kwB49ijAwaqvg9gTDA",
+    google: "DTVDUxb59Sq7awX1ybk8CCs__QEm8hX8Qvj4XN_TZ2c",
   },
 };
 
