@@ -21,8 +21,8 @@ export const translations = {
           desc: "Encontrá cualquier juego retro con portadas, screenshots e info detallada directamente desde la base de datos de IGDB.",
         },
         {
-          title: "Torrent integrado",
-          desc: "Descargá juegos directamente desde la app con el cliente torrent integrado. Seguí el progreso en tiempo real sin salir de Retrio.",
+          title: "Descarga integrada",
+          desc: "Descargá ROMs directamente desde Archive.org sin salir de la app. Seguí el progreso en tiempo real desde la sección de descargas.",
         },
         {
           title: "Emuladores automáticos",
