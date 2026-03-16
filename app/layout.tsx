@@ -53,12 +53,39 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Retrio",
+  operatingSystem: "Windows",
+  applicationCategory: "GameApplication",
+  description:
+    "Launcher de juegos retro para Windows. Buscá juegos con IGDB, descargalos vía torrent integrado y lanzalos con el emulador correcto automáticamente.",
+  url: "https://retrio-web.vercel.app",
+  downloadUrl: "https://retrio-web.vercel.app/api/download",
+  softwareVersion: "1.0",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  image: "https://retrio-web.vercel.app/Icons/RetrioBanner.png",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={inter.className}><LanguageProvider>{children}</LanguageProvider><Analytics /><SpeedInsights /></body>
+      <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <LanguageProvider>{children}</LanguageProvider>
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
