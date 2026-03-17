@@ -9,7 +9,7 @@ export const translations = {
     hero: {
       tagline: "Tu librería de juegos retro para Windows.",
       description:
-        "Buscá juegos por nombre, descargalos directo con torrent integrado, lanzalos con el emulador correcto — todo desde una sola app.",
+        "Buscá juegos por nombre, descargalos desde Internet Archive, lanzalos con el emulador correcto — todo desde una sola app.",
       download: "Descargar",
       github: "Ver en GitHub",
       downloads: "descargas",
@@ -106,7 +106,7 @@ export const translations = {
     hero: {
       tagline: "Your retro game library for Windows.",
       description:
-        "Search games by name, download them with the built-in torrent client, launch them with the right emulator — all from a single app.",
+        "Search games by name, download them from Internet Archive, launch them with the right emulator — all from a single app.",
       download: "Download",
       github: "View on GitHub",
       downloads: "downloads",

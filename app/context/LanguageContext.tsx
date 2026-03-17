@@ -19,9 +19,21 @@ const LanguageContext = createContext<LanguageContextType>({
   setDark: () => {},
 });
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLang] = useState<Lang>("es");
+export function LanguageProvider({ children, initialLang = "es" }: { children: React.ReactNode; initialLang?: Lang }) {
+  const [lang, setLang] = useState<Lang>(initialLang);
   const [dark, setDarkState] = useState(true);
+
+  useEffect(() => {
+    const savedLang = localStorage.getItem("lang") as Lang | null;
+    if (savedLang === "es" || savedLang === "en") {
+      setLang(savedLang);
+    }
+  }, []);
+
+  const wrappedSetLang = (value: Lang) => {
+    setLang(value);
+    localStorage.setItem("lang", value);
+  };
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
@@ -38,7 +50,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t: translations[lang], dark, setDark }}>
+    <LanguageContext.Provider value={{ lang, setLang: wrappedSetLang, t: translations[lang], dark, setDark }}>
       {children}
     </LanguageContext.Provider>
   );
